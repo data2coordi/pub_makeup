@@ -1,0 +1,27 @@
+
+
+#chmod -R 777 wp-content
+#docker exec -it wordpress_wordpress_1 sh -c "apt-get update && apt-get install -y vim"
+
+#apt-get install -y wget
+#apt-get install -y mariadb
+#apt-get install -y subversion
+
+#wget https://phar.phpunit.de/phpunit-7.0.phar 
+#chmod +x phpunit-7.0.phar 
+#mv phpunit-7.0.phar /usr/local/bin/phpunit 
+#phpunit --version 
+ 
+#curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar 
+#chmod +x wp-cli.phar 
+#mv wp-cli.phar /usr/local/bin/wp 
+
+#--------------------------------------------
+###jest
+#docker build -t makeup_test .
+#docker run -d -it -v /home/a/wordpress/wp-content/makeup:/src --name makeup_test makeup_test
+#docker container start makeup_test
+#docker container stop makeup_test
+docker exec -it makeup_test bash
+#npm install --save-dev jest
+#npm install --save-dev jest babel-jest

@@ -1,0 +1,235 @@
+test1
+mkdir img/grp
+mkdir img/main/
+mkdir img/color/
+cd img/main
+mkdir mkdir 
+mkdir cheek
+mkdir eyeblow
+mkdir eyeline
+mkdir eyeshadow
+mkdir fande
+mkdir hair
+mkdir hair02
+mkdir karakon
+mkdir masukara
+mkdir rip
+mkdir shading
+cd ..
+cp -r ./img/main/* ./img/color/
+
+exit
+-------------------------------
+##ディレクトリパスとHTMLのIDのルール
+
+
+CSSのID名のルール
+        グループに表示する画像
+                grp_masukara
+                grp_hare
+
+        メインに表示する画像
+                main_masukara
+                main_hare
+
+        カラーに表示する画像
+                color_01
+                color_02
+                color_03
+
+フォルダ構成とファイル名
+	img
+		grp
+			masukara.png
+			hare.png
+		color
+			masukara
+				red.png
+				blue.png
+			hare
+				red.png
+				blue.png
+		main
+			masukara
+				red.png
+				blue.png
+			hare
+				red.png
+				blue.png
+
+サンプル
+	#path
+	 ./img/grp  /faundetion.png
+	 ./img/color/faundetion/red.png
+	 ./img/main /faundetion/red.png
+
+	#css id
+	<img src="img/grp  /faundetion.png"       id="grp_faundetion"  alt="" />
+	<img src="img/color/faundetion/red.png"   id="color_01"        alt="" />
+	<img src="img/main /faundetion/red.png"   id="main_faundetion" alt="" />
+
+	baseはmakeup.phpに直接記載される
+	srcの部分はプログラムで入れ替える
+
+-------------------------------------------------------
+クラス設計1
+
+ui    > grp   対象grp選択イベント>  managr
+		 imgCtl  <colorValSet     manager 
+		 imgCtl  getColorVal> rep
+	domain <setColorVal  imgCtl
+ui    < domain <setDisp display <objectDsiplay manager 
+
+ui    > color   対象color選択イベント>  manager  
+                 imgCtl  <imageSet     manager 
+		 imgCtl  getMain> rep
+        domain <setMain imgCtl
+ui    < domain <setDisp display <objectDsiplay manager 
+
+
+
+
+-------------------------------------------------------
+クラス設計2
+-------------------------------------------------------
+ui
+
+domain
+	manager	
+	factory	
+	ui_image
+		o_group
+			key:grp_name
+			vo_group
+			display_flg
+		o_color
+			key:color_01-30
+			vo_color
+			display
+		o_main
+			key:"main_"grp_name
+			vo_main
+			display
+		o_base
+			key:base_name
+			vo_base
+
+	vo_file_image
+		vo_group
+			grp_name:
+			src:path
+		vo_color
+			grp_name:
+			color:
+			src:path
+		vo_main
+			grp_name:
+			color:
+			src:path
+		vo_base
+			src:path
+
+repository
+
+database
+	grp
+		key:grp
+		vo_group
+	color
+		key:grp
+		key:color
+		vo_color
+	main
+		key:grop
+		key:color
+		vo_main
+
+bk
+-------------------------------------------------------
+-------------------------------------------------------
+クラス設計
+
+o_マネージャ
+	画像データベース
+		grp
+		color
+		main
+	O_ベース画像
+	O_グループ画像
+	method
+		画像データベース作成
+			グループ
+			色
+			メイン
+
+		画像データの事前読み込み
+			prImg[i] = new Image();
+			prImg[i].src = data[i];
+
+		ベース画像表示
+		グループ画像配置
+
+
+O_画像オブジェクト
+	タイプ
+		grp
+		color
+		main
+	O_登録先IMGタグ
+	method
+		タイプを登録する
+			アドレス解析
+		登録先に表示する
+		登録先から削除する
+		登録先から非表示にする
+	
+O_Main画像
+	選択済フラッグ
+	method
+
+O_グループ画像
+	O_色画像s
+	method 
+		対象の色画像(複数)登録
+		クリックイベント
+			色グループ表示
+
+O_色画像
+	O_Main画像
+	Method
+		対象のメイン画像登録
+		クリックイベント
+			メイン画像表示
+
+
+O_コントール画像
+	戻る
+	初期化
+
+
+
+--------------------------------------------------------------------------
+画像を選択して表示する
+        選択する grpMgr
+                ベース画像を表示する  MainBase
+			画像名の取得
+			HTMLに登録
+		種類を選択する
+			種類選択用のボタン画像名の取得
+			HTMLに登録
+				クリックで色画像名を取得する
+		色を選択する
+			色選択用のボタン画像名を取得
+			HTMLに登録
+			クリックイベントの登録
+				クリックでメイン画像名を取得する
+        表示する  mainMgr
+                ベース画像を表示する  MainBase
+			画像名の取得
+			HTMLに登録
+                選択された画像を表示する MainSelect
+			クリアする
+			画像名の取得
+			HTMLに登録
+
+
