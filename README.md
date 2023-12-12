@@ -19,60 +19,86 @@ class Class10 {
 }
 
 
-
-
-
 ```
+
+
+
 ```mermaid
 classDiagram
 class GrpMgr {
-+ GrpMgr()
-+ changeDisplayState(flag)
-+ changeDisplayStateByKey(key, flag)
+  + GrpMgr()
+  + changeDisplayState(flag)
+  + changeDisplayStateByKey(key, flag)
 }
 
-class MakeUpManager {
-+ MakeUpManager()
-+ actionColorButton(currentGrp, selectedColor)
-+ actionGrpButton(selectedGrp)
-+ displayScore()
-+ endDisplayScore()
-+ endPreview()
-+ initMakeup()
-+ preview()
-+ setItemMgr(grpMgr, colorMgr, mainMgr)
+class GrpItemMgrFactory {
+  + GrpItemMgrFactory()
+  + checkPathAndCssid(cssId, path)
+  + createItem(arg_imagePath)
+  + createItems(paths)
+  + createMgr(paths)
+  + setMakeupManager(makeupManager)
 }
 
-GrpMgr --> ItemMgr
-MakeUpManager --> GroupManager
-MakeUpManager --> ColorManager
-MakeUpManager --> MainManager
-```
+class GrpItem {
+  + GrpItem()
+  + getCssId()
+  + getDisplayStatus()
+  + getSrc()
+  + setAction(makeupManager)
+  + setDisplay(flag)
+  + setDisplayImage()
+  + setImgVal(val)
+}
 
+class ColorMgr {
+  + ColorMgr()
+  + changeDisplayImage(key, makeupManager)
+  + changeDisplayState(flag)
+  + changeDisplayStateByKey(key, flag)
+  + initColorCssId()
+}
 
+class ColorItemMgrFactory {
+  + ColorItemMgrFactory()
+  + checkPathAndCssid(cssId, path)
+  + createItem(ct)
+  + createItems(rep)
+  + createMgr(paths)
+  + createRep(arg_imagePaths)
+  + setMakeupManager(makeupManager)
+}
 
-```mermaid
-classDiagram
 class ColorItem {
-func()
-getCssId()
-getDisplayStatus()
-getSrc()
-setAction(makeupManager)
-setDisplay(flag)
-setDisplayImage()
-setImgVal(val)
+  + ColorItem()
+  + getCssId()
+  + getDisplayStatus()
+  + getSrc()
+  + setAction(makeupManager)
+  + setDisplay(flag)
+  + setDisplayImage()
+  + setImgVal(val)
 }
 
-class Item {
-getCssId()
-getDisplayStatus()
-getSrc()
-setDisplay(flag)
-setDisplayImage()
-setImgVal(val)
+class BaseMgr {
+  + BaseMgr()
+  + addWindowEvent(func)
+  + changeDisplay(cssId, flag)
+  + changeDisplayImage(cssId, src)
+  + changeDisplayText(cssId, text)
+  + display_score(func, score, result_map)
+  + end_display_score()
+  + end_preview()
+  + init()
+  + preview(func)
 }
 
-ColorItem <|-- Item
+GrpMgr --|> ItemMgr
+GrpItemMgrFactory --|> ItemMgrFactory
+GrpItem --|> Item
+ColorMgr --|> ItemMgr
+ColorItemMgrFactory --|> ItemMgrFactory
+ColorItem --|> Item
+BaseMgr
+
 ```
-
