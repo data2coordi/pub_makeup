@@ -17,4 +17,22 @@ class Class10 {
   int id
   size()
 }
+
+
+classDiagram
+  class BaseMgr {
+    <<Constructor>> BaseMgr()
+    +static addWindowEvent(func)
+    +static changeDisplay(cssId, flag)
+    +static changeDisplayImage(cssId, src)
+    +static changeDisplayText(cssId, text)
+    +static display_score(func, score, result_map)
+    +static end_display_score()
+    +static end_preview()
+    +static init()
+    +static preview(func)
+  }
+
+
+
 ```
