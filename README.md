@@ -23,7 +23,31 @@ class Class10 {
 
 
 ```
+```mermaid
+classDiagram
+class GrpMgr {
++ GrpMgr()
++ changeDisplayState(flag)
++ changeDisplayStateByKey(key, flag)
+}
 
+class MakeUpManager {
++ MakeUpManager()
++ actionColorButton(currentGrp, selectedColor)
++ actionGrpButton(selectedGrp)
++ displayScore()
++ endDisplayScore()
++ endPreview()
++ initMakeup()
++ preview()
++ setItemMgr(grpMgr, colorMgr, mainMgr)
+}
+
+GrpMgr --> ItemMgr
+MakeUpManager --> GroupManager
+MakeUpManager --> ColorManager
+MakeUpManager --> MainManager
+```
 
 
 
