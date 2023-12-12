@@ -1,0 +1,15 @@
+{
+    "source": {
+        "include": ["MakeUpClass.js","MakeUpApri.js","MakeUpFactoryClass.js", "MakeUpItemClass.js"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "destination": "./docs",
+        "recurse": true,
+        "template": "templates/default", // オプションのテンプレート指定
+        "encoding": "utf8"
+    }
+}
+
+

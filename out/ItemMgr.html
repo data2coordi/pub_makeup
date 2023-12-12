@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: ItemMgr</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: ItemMgr</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>ItemMgr<span class="signature">(arg_items, arg_valRep)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">アイテムの管理クラス</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="ItemMgr"><span class="type-signature"></span>new ItemMgr<span class="signature">(arg_items, arg_valRep)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    コンストラクタ
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arg_items</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">アイテムの配列</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>arg_valRep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">値のマップ</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="MakeUpItemClass.js.html">MakeUpItemClass.js</a>, <a href="MakeUpItemClass.js.html#line134">line 134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="changeDisplayState"><span class="type-signature"></span>changeDisplayState<span class="signature">(flag)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    表示状態を変更する
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>flag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">表示状態</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="MakeUpItemClass.js.html">MakeUpItemClass.js</a>, <a href="MakeUpItemClass.js.html#line153">line 153</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="changeDisplayStateByKey"><span class="type-signature"></span>changeDisplayStateByKey<span class="signature">(key, flag)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    キーで表示状態を変更する
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">キー</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">表示状態</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="MakeUpItemClass.js.html">MakeUpItemClass.js</a>, <a href="MakeUpItemClass.js.html#line165">line 165</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BaseMgr.html">BaseMgr</a></li><li><a href="ColorItem.html">ColorItem</a></li><li><a href="ColorItemMgrFactory.html">ColorItemMgrFactory</a></li><li><a href="ColorMgr.html">ColorMgr</a></li><li><a href="GrpItem.html">GrpItem</a></li><li><a href="GrpItemMgrFactory.html">GrpItemMgrFactory</a></li><li><a href="GrpMgr.html">GrpMgr</a></li><li><a href="ImgVal.html">ImgVal</a></li><li><a href="ImgValColor.html">ImgValColor</a></li><li><a href="ImgValGrp.html">ImgValGrp</a></li><li><a href="ImgValMain.html">ImgValMain</a></li><li><a href="Item.html">Item</a></li><li><a href="ItemMgr.html">ItemMgr</a></li><li><a href="ItemMgrFactory.html">ItemMgrFactory</a></li><li><a href="MainItem.html">MainItem</a></li><li><a href="MainItemMgrFactory.html">MainItemMgrFactory</a></li><li><a href="MainMgr.html">MainMgr</a></li><li><a href="MakeUpClass.html">MakeUpClass</a></li><li><a href="MakeUpManager.html">MakeUpManager</a></li><li><a href="Repository.html">Repository</a></li><li><a href="ScoreClass.html">ScoreClass</a></li><li><a href="Utility.html">Utility</a></li></ul><h3>Global</h3><ul><li><a href="global.html#makeup">makeup</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Dec 13 2023 00:48:48 GMT+0900 (日本標準時)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

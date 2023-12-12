@@ -5,7 +5,9 @@
   "main": "MakeUpClass.js",
   "scripts": {
     "test": "jest"
+  },
+  "devDependencies": {
+    "add-text-to-markdown": "^2.0.0",
+    "documentation": "^14.0.2"
   }
 }
-
-
