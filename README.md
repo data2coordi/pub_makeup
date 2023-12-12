@@ -29,17 +29,26 @@ class Class10 {
 
 ```mermaid
 classDiagram
-class BaseMgr {
-+ BaseMgr()
-+ addWindowEvent(func)
-+ changeDisplay(cssId, flag)
-+ changeDisplayImage(cssId, src)
-+ changeDisplayText(cssId, text)
-+ display_score(func, score, result_map)
-+ end_display_score()
-+ end_preview()
-+ init()
-+ preview(func)
+class ColorItem {
+func()
+getCssId()
+getDisplayStatus()
+getSrc()
+setAction(makeupManager)
+setDisplay(flag)
+setDisplayImage()
+setImgVal(val)
 }
+
+class Item {
+getCssId()
+getDisplayStatus()
+getSrc()
+setDisplay(flag)
+setDisplayImage()
+setImgVal(val)
+}
+
+ColorItem <|-- Item
 ```
 
