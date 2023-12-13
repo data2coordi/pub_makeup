@@ -70,7 +70,7 @@ Vertex AIへの支持は下記のような作業イメージ
 
 
 ## JSDOC
-***[JSDOC形式のドキュメンテーション](https://data2coordi.github.io/pub_makeup/out/index.html)***
+***[JSDOC形式のドキュメンテーション](https://data2coordi.github.io/pub_makeup/jsdoc_document/index.html)***
 
 上記リンク先のJSDOCのドキュメントもVertex AIを活用して作成した。
 JavascriptのコードにJSDOCコメント付与をAIに指示してJSDOCコメント付きJavascriptコードを作成。
