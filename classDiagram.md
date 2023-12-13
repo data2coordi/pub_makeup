@@ -39,6 +39,7 @@ class MakeUpClass {
 MakeUpClass(arg_grps, arg_colors, args_mains)
 }
 ```
+
 ```mermaid
 class MainMgr {
 MainMgr()
@@ -98,6 +99,7 @@ setImgVal(val)
 }
 
 ```
+
 ```mermaid
 class ImgValMain {
 ImgValMain(src, grp, color)
@@ -131,6 +133,7 @@ changeDisplayStateByKey(key, flag)
 }
 
 ```
+
 ```mermaid
 class GrpItemMgrFactory {
 GrpItemMgrFactory()
@@ -161,6 +164,7 @@ initColorCssId()
 }
 
 ```
+
 ```mermaid
 class ColorItemMgrFactory {
 ColorItemMgrFactory()
