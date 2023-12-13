@@ -74,3 +74,49 @@ func :function
 
 Item <|-- ColorItem
 ```
+
+
+# Factory
+
+```mermaid
+classDiagram
+ItemMgrFactory <|-- GrpItemMgrFactory
+ItemMgrFactory <|-- MainItemMgrFactory
+ItemMgrFactory <|-- ColorItemMgrFactory
+
+class ItemMgrFactory {
++ ItemMgrFactory()
++ checkPathAndCssid(cssId, path)
++ createItem(path)
++ createItems(paths)
++ createMgr(paths)
++ setMakeupManager(makeupManager)
++ analyzeImgFilePath(arg_imagePath)
+}
+
+class GrpItemMgrFactory  {
++ createItem(arg_imagePath)
++ createItems(paths)
++ createMgr(paths)
+}
+
+class MainItemMgrFactory  {
++ mainRep : Repository
++ checkPathAndCssid(cssId, path)
++ createItem(arg_imagePath)
++ createItems(paths)
++ createMgr(paths)
++ existItemCheck(arg_items, arg_item)
++ setMakeupManager(makeupManager)
+}
+
+class ColorItemMgrFactory  {
++ checkPathAndCssid(cssId, path)
++ createItem(ct)
++ createItems(rep)
++ createMgr(paths)
++ createRep(arg_imagePaths)
++ setMakeupManager(makeupManager)
+}
+
+```
