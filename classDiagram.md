@@ -42,6 +42,7 @@ MakeUpClass(arg_grps, arg_colors, args_mains)
 ```
    
 ```mermaid
+classDiagram
 class MainMgr {
 MainMgr()
 changeDisplayImage(arg_grp, arg_color)
