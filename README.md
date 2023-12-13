@@ -11,7 +11,7 @@
 せっかくなので、ポートフォリオとして公開することにした。
 
 
- まずは使ってみてください。
+※ 直感的に操作できるのでまずは触ってみてください。
 
 
 [スパルタ！パーソナルカラー塾](https://color.toshidayurika.com/wp-content/makeup/makeup.php)
