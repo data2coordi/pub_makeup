@@ -36,42 +36,33 @@ ImgValGrp <|-- ImgVal
 
 
 
+
+
+# Item
+
 ```mermaid
 classDiagram
-  class ImgVal {
-    <<ValueObject>> +constructor(src: string)
-    -src: string
-  }
+class Item {
++ new Item(cssId)
++ getCssId()
++ getDisplayStatus()
++ getSrc()
++ setDisplay(flag)
++ setDisplayImage()
++ setImgVal(val)
+}
 
-  class ImgValMain {
-    <<ValueObject>> +constructor(src: string, grp: string, color: string)
-    -color: string
-    -grp: string
-    -src: string
-    ImgValGrp
-  }
+class GrpItem extends Item {
++ setAction(makeupManager)
+}
 
-  class ImgValColor {
-    <<ValueObject>> +constructor(src: string, grp: string, color: string)
-    -color: string
-    -grp: string
-    -src: string
-    ImgValGrp
-  }
+class MainItem extends Item {
++ getGrp()
++ getSeason()
+}
 
-  class ImgValGrp {
-    <<ValueObject>> +constructor(src: string, grp: string)
-    -grp: string
-    -src: string
-    ImgVal
-  }
-
-  ImgValMain --|> ImgValGrp
-  ImgValColor --|> ImgValGrp
-  ImgValGrp --|> ImgVal
-
+class ColorItem extends Item {
+func :function
++ setAction(makeupManager)
+}
 ```
-
-
-
-
