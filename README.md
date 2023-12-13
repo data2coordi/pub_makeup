@@ -54,7 +54,7 @@ GCPのVertex AI(code-vision)を使用して設計書を作成してみること�
 
 
 ## クラス図
-*** [クラス図](./classDiagram.md) ***
+***[クラス図](./classDiagram.md)***
 
 本クラス図は下記の方法で作成した。
 - 下記"JSDOC形式のドキュメンテーション"をブラウザで開く。
