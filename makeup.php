@@ -30,7 +30,7 @@
 <meta name="viewport" content="width=480">
 </head>
 <body>
-<!--ここにアドセンス入れてた-->
+
 <img src="img/base/base_matuge.png" id="base_matuge" alt=""/>
 <img src="img/base/base_back.png" id="base_back" alt="" />
 <img src="img/base/base_sp_kanae.png" id="base_kanae" alt="" />
