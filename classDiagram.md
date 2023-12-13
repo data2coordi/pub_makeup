@@ -38,8 +38,19 @@ setItemMgr(grpMgr, colorMgr, mainMgr)
 class MakeUpClass {
 MakeUpClass(arg_grps, arg_colors, args_mains)
 }
+   
 ```
    
+```mermaid
+class MainMgr {
+MainMgr()
+changeDisplayImage(arg_grp, arg_color)
+changeDisplayState(flag)
+changeDisplayStateByKey(key, flag)
+clear_dqn_ct()
+get_dqn_ct() -> number
+}
+```
         
 
 ```mermaid
