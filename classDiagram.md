@@ -52,14 +52,19 @@ class Item {
 + setImgVal(val)
 }
 
+
 class GrpItem extends Item {
 + setAction(makeupManager)
 }
+
+Item <|-- GrpItem
 
 class MainItem extends Item {
 + getGrp()
 + getSeason()
 }
+
+Item <|-- MainItem
 
 class ColorItem extends Item {
 func :function
@@ -67,7 +72,5 @@ func :function
 }
 
 
-Item <|-- GrpItem
-Item <|-- MainItem
 Item <|-- ColorItem
 ```
