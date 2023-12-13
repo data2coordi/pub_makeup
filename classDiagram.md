@@ -4,23 +4,6 @@
 classDiagram
 
 
-class MakeUpManager {
-- grpMgr : GroupManager
-- colorMgr : ColorManager
-- mainMgr : MainManager
-}
-
-class BaseMgr {
-+ addWindowEvent(func)
-+ changeDisplay(cssId, flag)
-+ changeDisplayImage(cssId, src)
-+ changeDisplayText(cssId, text)
-+ display_score(func, score, result_map)
-+ end_display_score()
-+ end_preview()
-+ init()
-+ preview(func)
-}
 
 
 ItemMgr <|-- GrpMgr
@@ -50,6 +33,26 @@ class ColorMgr  {
 + changeDisplayImage(key, makeupManager)
 + initColorCssId()
 }
+
+
+class MakeUpManager {
+- grpMgr : GroupManager
+- colorMgr : ColorManager
+- mainMgr : MainManager
+}
+
+class BaseMgr {
++ addWindowEvent(func)
++ changeDisplay(cssId, flag)
++ changeDisplayImage(cssId, src)
++ changeDisplayText(cssId, text)
++ display_score(func, score, result_map)
++ end_display_score()
++ end_preview()
++ init()
++ preview(func)
+}
+
 ```
 
 
