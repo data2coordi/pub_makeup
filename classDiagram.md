@@ -38,7 +38,8 @@ setItemMgr(grpMgr, colorMgr, mainMgr)
 class MakeUpClass {
 MakeUpClass(arg_grps, arg_colors, args_mains)
 }
-
+```
+```mermaid
 class MainMgr {
 MainMgr()
 changeDisplayImage(arg_grp, arg_color)
@@ -96,6 +97,8 @@ setDisplayImage()
 setImgVal(val)
 }
 
+```
+```mermaid
 class ImgValMain {
 ImgValMain(src, grp, color)
 color :string
@@ -127,6 +130,8 @@ changeDisplayState(flag)
 changeDisplayStateByKey(key, flag)
 }
 
+```
+```mermaid
 class GrpItemMgrFactory {
 GrpItemMgrFactory()
 checkPathAndCssid(cssId, path)
@@ -155,6 +160,8 @@ changeDisplayStateByKey(key, flag)
 initColorCssId()
 }
 
+```
+```mermaid
 class ColorItemMgrFactory {
 ColorItemMgrFactory()
 checkPathAndCssid(cssId, path)
