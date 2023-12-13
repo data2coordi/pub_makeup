@@ -39,6 +39,8 @@ class MakeUpClass {
 MakeUpClass(arg_grps, arg_colors, args_mains)
 }
 ```
+   
+        
 
 ```mermaid
 class MainMgr {
