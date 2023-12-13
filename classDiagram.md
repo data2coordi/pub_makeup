@@ -51,10 +51,8 @@ changeDisplayStateByKey(key, flag)
 clear_dqn_ct()
 get_dqn_ct() -> number
 }
-```
         
 
-```mermaid
 class MainMgr {
 MainMgr()
 changeDisplayImage(arg_grp, arg_color)
@@ -118,6 +116,7 @@ setImgVal(val)
      
 
 ```mermaid
+classDiagram
 class ImgValMain {
 ImgValMain(src, grp, color)
 color :string
@@ -152,6 +151,7 @@ changeDisplayStateByKey(key, flag)
 ```
 
 ```mermaid
+classDiagram
 class GrpItemMgrFactory {
 GrpItemMgrFactory()
 checkPathAndCssid(cssId, path)
@@ -183,6 +183,7 @@ initColorCssId()
 ```
 
 ```mermaid
+classDiagram
 class ColorItemMgrFactory {
 ColorItemMgrFactory()
 checkPathAndCssid(cssId, path)
