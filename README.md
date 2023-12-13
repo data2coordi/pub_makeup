@@ -75,7 +75,7 @@ Vertex AIへの支持は下記のような作業イメージ
 上記リンク先のJSDOCのドキュメントもVertex AIを活用して作成した。
 JavascriptのコードにJSDOCコメント付与をAIに指示してJSDOCコメント付きJavascriptコードを作成。
 その後、jsdocコマンドでHTML形式のドキュメントを生成している。
-完全にAIが生成したそのままである。
+完全にAIが生成した状態そのままである。
 
 
 
