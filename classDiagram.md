@@ -36,7 +36,41 @@ ImgValGrp <|-- ImgVal
 
 
 
+```mermaid
+classDiagram
+  class ImgVal {
+    <<ValueObject>> +constructor(src: string)
+    -src: string
+  }
 
+  class ImgValMain {
+    <<ValueObject>> +constructor(src: string, grp: string, color: string)
+    -color: string
+    -grp: string
+    -src: string
+    ImgValGrp
+  }
+
+  class ImgValColor {
+    <<ValueObject>> +constructor(src: string, grp: string, color: string)
+    -color: string
+    -grp: string
+    -src: string
+    ImgValGrp
+  }
+
+  class ImgValGrp {
+    <<ValueObject>> +constructor(src: string, grp: string)
+    -grp: string
+    -src: string
+    ImgVal
+  }
+
+  ImgValMain --|> ImgValGrp
+  ImgValColor --|> ImgValGrp
+  ImgValGrp --|> ImgVal
+
+```
 
 
 
