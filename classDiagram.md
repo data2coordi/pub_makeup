@@ -53,20 +53,20 @@ class Item {
 }
 
 
-class GrpItem extends Item {
+class GrpItem  {
 + setAction(makeupManager)
 }
 
 Item <|-- GrpItem
 
-class MainItem extends Item {
+class MainItem  {
 + getGrp()
 + getSeason()
 }
 
 Item <|-- MainItem
 
-class ColorItem extends Item {
+class ColorItem {
 func :function
 + setAction(makeupManager)
 }
