@@ -120,3 +120,37 @@ class ColorItemMgrFactory  {
 }
 
 ```
+
+
+
+```mermaid
+classDiagram
+
+ItemMgr <|-- GrpMgr
+ItemMgr <|-- MainMgr
+ItemMgr <|-- ColorMgr
+
+
+class ItemMgr {
++ new ItemMgr(arg_items, arg_valRep)
++ changeDisplayState(flag)
++ changeDisplayStateByKey(key, flag)
+}
+
+class GrpMgr extends ItemMgr {
++ new GrpMgr()
+}
+
+class MainMgr extends ItemMgr {
++ new MainMgr()
++ changeDisplayImage(arg_grp, arg_color)
++ clear_dqn_ct()
++ get_dqn_ct()
+}
+
+class ColorMgr extends ItemMgr {
++ new ColorMgr()
++ changeDisplayImage(key, makeupManager)
++ initColorCssId()
+}
+```
