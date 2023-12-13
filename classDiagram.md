@@ -65,4 +65,9 @@ class ColorItem extends Item {
 func :function
 + setAction(makeupManager)
 }
+
+
+Item <|-- GrpItem
+Item <|-- MainItem
+Item <|-- ColorItem
 ```
