@@ -69,7 +69,7 @@ GCPのVertex AI(code-vision)を使用して設計書を作成してみること�
 
 
 ## JSDOC
-[JSDOC形式のドキュメンテーション](https://data2coordi.github.io/pub_makeup/out/index.html)
+***[JSDOC形式のドキュメンテーション](https://data2coordi.github.io/pub_makeup/out/index.html)***
 
 JavascriptのコードにJSDOCのコメント付与をAIに指示してJSDOCのコメントを作成した。
 その後、jsdocコマンドで上記ドキュメントを生成している。
