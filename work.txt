@@ -152,6 +152,20 @@ Source:
 MakeUpFactoryClass.js, line 328
 
 
+Class: MakeUpClass
+MakeUpClass(arg_grps, arg_colors, args_mains)
+new MakeUpClass(arg_grps, arg_colors, args_mains)
+コンストラクタ
+Parameters:
+Name	Type	Description
+arg_grps	Array	グループアイテムの配列
+arg_colors	Array	カラーアイテムの配列
+args_mains	Array	メインアイテムの配列
+Source:
+MakeUpClass.js, line 16
+
+
+
 
 Class: MakeUpManager
 MakeUpManager()
@@ -211,22 +225,112 @@ MakeUpClass.js, line 341
 
 
 
-Class: MakeUpClass
-MakeUpClass(arg_grps, arg_colors, args_mains)
-new MakeUpClass(arg_grps, arg_colors, args_mains)
+Class: BaseMgr
+BaseMgr()
+ベースの管理クラス
+Constructor
+new BaseMgr()
+Source:
+MakeUpItemClass.js, line 11
+Methods
+(static) addWindowEvent(func)
+ウィンドウイベントを追加する
+Parameters:
+Name	Type	Description
+func	function	イベントハンドラ
+Source:
+MakeUpItemClass.js, line 126
+(static) changeDisplay(cssId, flag)
+要素の表示状態を変更する
+Parameters:
+Name	Type	Description
+cssId	string	要素のID
+flag	string	表示状態
+Source:
+MakeUpItemClass.js, line 91
+(static) changeDisplayImage(cssId, src)
+要素の画像を変更する
+Parameters:
+Name	Type	Description
+cssId	string	要素のID
+src	string	画像のパス
+Source:
+MakeUpItemClass.js, line 103
+(static) changeDisplayText(cssId, text)
+要素のテキストを変更する
+Parameters:
+Name	Type	Description
+cssId	string	要素のID
+text	string	テキスト
+Source:
+MakeUpItemClass.js, line 114
+(static) display_score(func, score, result_map)
+スコアを表示する
+Parameters:
+Name	Type	Description
+func	function	イベントハンドラ
+score	number	スコア
+result_map	object	結果マップ
+Source:
+MakeUpItemClass.js, line 42
+(static) end_display_score()
+スコアの表示を終了する
+Source:
+MakeUpItemClass.js, line 65
+(static) end_preview()
+プレビューを終了する
+Source:
+MakeUpItemClass.js, line 30
+(static) init()
+初期化する
+Source:
+MakeUpItemClass.js, line 77
+(static) preview(func)
+プレビューを表示する
+Parameters:
+Name	Type	Description
+func	function	イベントハンドラ
+Source:
+MakeUpItemClass.js, line 18
+
+
+
+
+## Mgr
+
+
+
+
+
+
+Class: ItemMgr
+ItemMgr(arg_items, arg_valRep)
+アイテムの管理クラス
+Constructor
+new ItemMgr(arg_items, arg_valRep)
 コンストラクタ
 Parameters:
 Name	Type	Description
-arg_grps	Array	グループアイテムの配列
-arg_colors	Array	カラーアイテムの配列
-args_mains	Array	メインアイテムの配列
+arg_items	array	アイテムの配列
+arg_valRep	object	値のマップ
 Source:
-MakeUpClass.js, line 16
-
-
-
-
-
+MakeUpItemClass.js, line 134
+Methods
+changeDisplayState(flag)
+表示状態を変更する
+Parameters:
+Name	Type	Description
+flag	string	表示状態
+Source:
+MakeUpItemClass.js, line 153
+changeDisplayStateByKey(key, flag)
+キーで表示状態を変更する
+Parameters:
+Name	Type	Description
+key	string	キー
+flag	string	表示状態
+Source:
+MakeUpItemClass.js, line 165
 
 
 
@@ -282,6 +386,180 @@ Type
 number
 
 
+
+
+
+
+
+
+
+
+
+
+
+Class: ColorMgr
+ColorMgr()
+カラーマネージャー
+Constructor
+new ColorMgr()
+Source:
+MakeUpItemClass.js, line 187
+Extends
+ItemMgr
+Methods
+changeDisplayImage(key, makeupManager)
+表示画像を変更する
+Parameters:
+Name	Type	Description
+key	string	キー
+makeupManager	MakeupManager	メイクアップマネージャー
+Source:
+MakeUpItemClass.js, line 194
+changeDisplayState(flag)
+表示状態を変更する
+Parameters:
+Name	Type	Description
+flag	string	表示状態
+Inherited From:
+ItemMgr#changeDisplayState
+Source:
+MakeUpItemClass.js, line 153
+changeDisplayStateByKey(key, flag)
+キーで表示状態を変更する
+Parameters:
+Name	Type	Description
+key	string	キー
+flag	string	表示状態
+Inherited From:
+ItemMgr#changeDisplayStateByKey
+Source:
+MakeUpItemClass.js, line 165
+initColorCssId()
+カラーCSS IDを初期化する
+Source:
+MakeUpItemClass.js, line 215
+
+
+
+
+
+
+
+
+
+
+Class: GrpMgr
+GrpMgr()
+グループマネージャー
+Constructor
+new GrpMgr()
+Source:
+MakeUpItemClass.js, line 179
+Extends
+ItemMgr
+Methods
+changeDisplayState(flag)
+表示状態を変更する
+Parameters:
+Name	Type	Description
+flag	string	表示状態
+Inherited From:
+ItemMgr#changeDisplayState
+Source:
+MakeUpItemClass.js, line 153
+changeDisplayStateByKey(key, flag)
+キーで表示状態を変更する
+Parameters:
+Name	Type	Description
+key	string	キー
+flag	string	表示状態
+Inherited From:
+ItemMgr#changeDisplayStateByKey
+Source:
+MakeUpItemClass.js, line 165
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Factory
+
+
+Class: ItemMgrFactory
+ItemMgrFactory()
+アイテムマネージャーファクトリー
+Constructor
+new ItemMgrFactory()
+Source:
+MakeUpFactoryClass.js, line 13
+Methods
+checkPathAndCssid(cssId, path)
+パスとCSSIDをチェックする
+Parameters:
+Name	Type	Description
+cssId	string	CSSID
+path	string	パス
+Source:
+MakeUpFactoryClass.js, line 56
+createItem(path) → {GrpItem|ColorItem|MainItem}
+アイテムを作成する
+Parameters:
+Name	Type	Description
+path	string	パス
+Source:
+MakeUpFactoryClass.js, line 47
+Returns:
+アイテム
+Type
+GrpItem | ColorItem | MainItem
+createItems(paths) → {Array.<GrpItem>|Array.<ColorItem>|Array.<MainItem>}
+アイテムを作成する
+Parameters:
+Name	Type	Description
+paths	Array.<string>	パス
+Source:
+MakeUpFactoryClass.js, line 37
+Returns:
+アイテム
+Type
+Array.<GrpItem> | Array.<ColorItem> | Array.<MainItem>
+createMgr(paths) → {GrpMgr|ColorMgr|MainMgr}
+マネージャーを作成する
+Parameters:
+Name	Type	Description
+paths	Array.<string>	パス
+Source:
+MakeUpFactoryClass.js, line 28
+Returns:
+マネージャー
+Type
+GrpMgr | ColorMgr | MainMgr
+setMakeupManager(makeupManager)
+メイクアップマネージャーを設定する
+Parameters:
+Name	Type	Description
+makeupManager	MakeupManager	メイクアップマネージャー
+Source:
+MakeUpFactoryClass.js, line 19
+(static) analyzeImgFilePath(arg_imagePath) → {Object}
+画像ファイルパスを分析する
+Parameters:
+Name	Type	Description
+arg_imagePath	string	画像ファイルパス
+Source:
+MakeUpFactoryClass.js, line 68
+Returns:
+値の辞書
+Type
+Object
 
 
 
@@ -386,701 +664,6 @@ MakeUpFactoryClass.js, line 19
 
 
 
-Class: MainItem
-MainItem()
-メインアイテムクラス
-Constructor
-new MainItem()
-Source:
-MakeUpItemClass.js, line 453
-Extends
-Item
-Methods
-getCssId() → {string}
-CSS IDを取得する
-Inherited From:
-Item#getCssId
-Source:
-MakeUpItemClass.js, line 322
-Returns:
-CSS ID
-Type
-string
-getDisplayStatus() → {string}
-表示ステータスを取得する
-Inherited From:
-Item#getDisplayStatus
-Source:
-MakeUpItemClass.js, line 354
-Returns:
-表示ステータス
-Type
-string
-getGrp() → {string}
-グループを取得する
-Source:
-MakeUpItemClass.js, line 471
-Returns:
-グループ
-Type
-string
-getSeason() → {string}
-シーズンを取得する
-Source:
-MakeUpItemClass.js, line 479
-Returns:
-シーズン
-Type
-string
-getSrc() → {string}
-ソースを取得する
-Inherited From:
-Item#getSrc
-Source:
-MakeUpItemClass.js, line 331
-Returns:
-ソース
-Type
-string
-setDisplay(flag)
-表示を設定する
-Parameters:
-Name	Type	Description
-flag	string	フラグ
-Inherited From:
-Item#setDisplay
-Source:
-MakeUpItemClass.js, line 344
-setDisplayImage()
-表示画像を設定する
-Inherited From:
-Item#setDisplayImage
-Source:
-MakeUpItemClass.js, line 361
-setImgVal(val)
-画像値を設定する
-Parameters:
-Name	Type	Description
-val	object	画像値
-Inherited From:
-Item#setImgVal
-Source:
-MakeUpItemClass.js, line 314
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Class: ItemMgrFactory
-ItemMgrFactory()
-アイテムマネージャーファクトリー
-Constructor
-new ItemMgrFactory()
-Source:
-MakeUpFactoryClass.js, line 13
-Methods
-checkPathAndCssid(cssId, path)
-パスとCSSIDをチェックする
-Parameters:
-Name	Type	Description
-cssId	string	CSSID
-path	string	パス
-Source:
-MakeUpFactoryClass.js, line 56
-createItem(path) → {GrpItem|ColorItem|MainItem}
-アイテムを作成する
-Parameters:
-Name	Type	Description
-path	string	パス
-Source:
-MakeUpFactoryClass.js, line 47
-Returns:
-アイテム
-Type
-GrpItem | ColorItem | MainItem
-createItems(paths) → {Array.<GrpItem>|Array.<ColorItem>|Array.<MainItem>}
-アイテムを作成する
-Parameters:
-Name	Type	Description
-paths	Array.<string>	パス
-Source:
-MakeUpFactoryClass.js, line 37
-Returns:
-アイテム
-Type
-Array.<GrpItem> | Array.<ColorItem> | Array.<MainItem>
-createMgr(paths) → {GrpMgr|ColorMgr|MainMgr}
-マネージャーを作成する
-Parameters:
-Name	Type	Description
-paths	Array.<string>	パス
-Source:
-MakeUpFactoryClass.js, line 28
-Returns:
-マネージャー
-Type
-GrpMgr | ColorMgr | MainMgr
-setMakeupManager(makeupManager)
-メイクアップマネージャーを設定する
-Parameters:
-Name	Type	Description
-makeupManager	MakeupManager	メイクアップマネージャー
-Source:
-MakeUpFactoryClass.js, line 19
-(static) analyzeImgFilePath(arg_imagePath) → {Object}
-画像ファイルパスを分析する
-Parameters:
-Name	Type	Description
-arg_imagePath	string	画像ファイルパス
-Source:
-MakeUpFactoryClass.js, line 68
-Returns:
-値の辞書
-Type
-Object
-
-
-
-
-
-
-Class: ItemMgr
-ItemMgr(arg_items, arg_valRep)
-アイテムの管理クラス
-Constructor
-new ItemMgr(arg_items, arg_valRep)
-コンストラクタ
-Parameters:
-Name	Type	Description
-arg_items	array	アイテムの配列
-arg_valRep	object	値のマップ
-Source:
-MakeUpItemClass.js, line 134
-Methods
-changeDisplayState(flag)
-表示状態を変更する
-Parameters:
-Name	Type	Description
-flag	string	表示状態
-Source:
-MakeUpItemClass.js, line 153
-changeDisplayStateByKey(key, flag)
-キーで表示状態を変更する
-Parameters:
-Name	Type	Description
-key	string	キー
-flag	string	表示状態
-Source:
-MakeUpItemClass.js, line 165
-
-
-
-
-
-
-
-
-
-
-Class: Item
-Item(cssId)
-アイテム
-Constructor
-new Item(cssId)
-コンストラクタ
-Parameters:
-Name	Type	Description
-cssId	string	CSS ID
-Source:
-MakeUpItemClass.js, line 299
-Methods
-getCssId() → {string}
-CSS IDを取得する
-Source:
-MakeUpItemClass.js, line 322
-Returns:
-CSS ID
-Type
-string
-getDisplayStatus() → {string}
-表示ステータスを取得する
-Source:
-MakeUpItemClass.js, line 354
-Returns:
-表示ステータス
-Type
-string
-getSrc() → {string}
-ソースを取得する
-Source:
-MakeUpItemClass.js, line 331
-Returns:
-ソース
-Type
-string
-setDisplay(flag)
-表示を設定する
-Parameters:
-Name	Type	Description
-flag	string	フラグ
-Source:
-MakeUpItemClass.js, line 344
-setDisplayImage()
-表示画像を設定する
-Source:
-MakeUpItemClass.js, line 361
-setImgVal(val)
-画像値を設定する
-Parameters:
-Name	Type	Description
-val	object	画像値
-Source:
-MakeUpItemClass.js, line 314
-
-
-
-
-Class: ImgValMain
-ImgValMain(src, grp, color)
-メイン値オブジェクト
-Constructor
-new ImgValMain(src, grp, color)
-コンストラクタ
-Parameters:
-Name	Type	Description
-src	string	ソース
-grp	string	グループ
-color	string	カラー
-Source:
-MakeUpItemClass.js, line 556
-Extends
-ImgValGrp
-Members
-color :string
-カラー
-Type:
-string
-Source:
-MakeUpItemClass.js, line 562
-grp :string
-グループ
-Type:
-string
-Overrides:
-ImgValGrp#grp
-Source:
-MakeUpItemClass.js, line 514
-src :string
-ソース
-Type:
-string
-Overrides:
-ImgValGrp#src
-Source:
-MakeUpItemClass.js, line 493
-
-
-
-
-
-
-
-
-
-
-
-Class: ImgValGrp
-ImgValGrp(src, grp)
-グループ値オブジェクト
-Constructor
-new ImgValGrp(src, grp)
-コンストラクタ
-Parameters:
-Name	Type	Description
-src	string	ソース
-grp	string	グループ
-Source:
-MakeUpItemClass.js, line 508
-Extends
-ImgVal
-Members
-grp :string
-グループ
-Type:
-string
-Source:
-MakeUpItemClass.js, line 514
-src :string
-ソース
-Type:
-string
-Overrides:
-ImgVal#src
-Source:
-MakeUpItemClass.js, line 493
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Class: ImgValColor
-ImgValColor(src, grp, color)
-カラー値オブジェクト ItemMgrFactory
-Constructor
-new ImgValColor(src, grp, color)
-コンストラクタ
-Parameters:
-Name	Type	Description
-src	string	ソース
-grp	string	グループ
-color	string	カラー
-Source:
-MakeUpItemClass.js, line 532
-Extends
-ImgValGrp
-Members
-color :string
-カラー
-Type:
-string
-Source:
-MakeUpItemClass.js, line 538
-grp :string
-グループ
-Type:
-string
-Overrides:
-ImgValGrp#grp
-Source:
-MakeUpItemClass.js, line 514
-src :string
-ソース
-Type:
-string
-Overrides:
-ImgValGrp#src
-Source:
-MakeUpItemClass.js, line 493
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Class: ImgVal
-ImgVal(src)
-値オブジェクト
-Constructor
-new ImgVal(src)
-コンストラクタ
-Parameters:
-Name	Type	Description
-src	string	ソース
-Source:
-MakeUpItemClass.js, line 487
-Members
-src :string
-ソース
-Type:
-string
-Source:
-MakeUpItemClass.js, line 493
-
-
-
-
-
-Class: GrpMgr
-GrpMgr()
-グループマネージャー
-Constructor
-new GrpMgr()
-Source:
-MakeUpItemClass.js, line 179
-Extends
-ItemMgr
-Methods
-changeDisplayState(flag)
-表示状態を変更する
-Parameters:
-Name	Type	Description
-flag	string	表示状態
-Inherited From:
-ItemMgr#changeDisplayState
-Source:
-MakeUpItemClass.js, line 153
-changeDisplayStateByKey(key, flag)
-キーで表示状態を変更する
-Parameters:
-Name	Type	Description
-key	string	キー
-flag	string	表示状態
-Inherited From:
-ItemMgr#changeDisplayStateByKey
-Source:
-MakeUpItemClass.js, line 165
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Class: GrpItemMgrFactory
-GrpItemMgrFactory()
-グループアイテムマネージャーファクトリー
-Constructor
-new GrpItemMgrFactory()
-Source:
-MakeUpFactoryClass.js, line 99
-Extends
-ItemMgrFactory
-Methods
-checkPathAndCssid(cssId, path)
-パスとCSSIDをチェックする
-Parameters:
-Name	Type	Description
-cssId	string	CSSID
-path	string	パス
-Inherited From:
-ItemMgrFactory#checkPathAndCssid
-Source:
-MakeUpFactoryClass.js, line 56
-createItem(arg_imagePath) → {GrpItem}
-アイテムを作成する
-Parameters:
-Name	Type	Description
-arg_imagePath	string	パス
-Overrides:
-ItemMgrFactory#createItem
-Source:
-MakeUpFactoryClass.js, line 130
-Returns:
-アイテム
-Type
-GrpItem
-createItems(paths) → {Array.<GrpItem>}
-アイテムを作成する
-Parameters:
-Name	Type	Description
-paths	Array.<string>	パス
-Overrides:
-ItemMgrFactory#createItems
-Source:
-MakeUpFactoryClass.js, line 115
-Returns:
-アイテム
-Type
-Array.<GrpItem>
-createMgr(paths) → {GrpMgr}
-マネージャーを作成する
-Parameters:
-Name	Type	Description
-paths	Array.<string>	パス
-Overrides:
-ItemMgrFactory#createMgr
-Source:
-MakeUpFactoryClass.js, line 106
-Returns:
-マネージャー
-Type
-GrpMgr
-setMakeupManager(makeupManager)
-メイクアップマネージャーを設定する
-Parameters:
-Name	Type	Description
-makeupManager	MakeupManager	メイクアップマネージャー
-Inherited From:
-ItemMgrFactory#setMakeupManager
-Source:
-MakeUpFactoryClass.js, line 19
-
-
-
-
-
-
-
-
-
-
-
-
-
-Class: GrpItem
-GrpItem()
-グループアイテムクラス
-Constructor
-new GrpItem()
-Source:
-MakeUpItemClass.js, line 374
-Extends
-Item
-Methods
-getCssId() → {string}
-CSS IDを取得する
-Inherited From:
-Item#getCssId
-Source:
-MakeUpItemClass.js, line 322
-Returns:
-CSS ID
-Type
-string
-getDisplayStatus() → {string}
-表示ステータスを取得する
-Inherited From:
-Item#getDisplayStatus
-Source:
-MakeUpItemClass.js, line 354
-Returns:
-表示ステータス
-Type
-string
-getSrc() → {string}
-ソースを取得する
-Inherited From:
-Item#getSrc
-Source:
-MakeUpItemClass.js, line 331
-Returns:
-ソース
-Type
-string
-setAction(makeupManager)
-アクションを設定する
-Parameters:
-Name	Type	Description
-makeupManager	MakeupManager	メイクアップマネージャー
-Source:
-MakeUpItemClass.js, line 392
-setDisplay(flag)
-表示を設定する
-Parameters:
-Name	Type	Description
-flag	string	フラグ
-Inherited From:
-Item#setDisplay
-Source:
-MakeUpItemClass.js, line 344
-setDisplayImage()
-表示画像を設定する
-Inherited From:
-Item#setDisplayImage
-Source:
-MakeUpItemClass.js, line 361
-setImgVal(val)
-画像値を設定する
-Parameters:
-Name	Type	Description
-val	object	画像値
-Inherited From:
-Item#setImgVal
-Source:
-MakeUpItemClass.js, line 314
-
-
-
-
-
-
-
-
-
-
-
-Class: ColorMgr
-ColorMgr()
-カラーマネージャー
-Constructor
-new ColorMgr()
-Source:
-MakeUpItemClass.js, line 187
-Extends
-ItemMgr
-Methods
-changeDisplayImage(key, makeupManager)
-表示画像を変更する
-Parameters:
-Name	Type	Description
-key	string	キー
-makeupManager	MakeupManager	メイクアップマネージャー
-Source:
-MakeUpItemClass.js, line 194
-changeDisplayState(flag)
-表示状態を変更する
-Parameters:
-Name	Type	Description
-flag	string	表示状態
-Inherited From:
-ItemMgr#changeDisplayState
-Source:
-MakeUpItemClass.js, line 153
-changeDisplayStateByKey(key, flag)
-キーで表示状態を変更する
-Parameters:
-Name	Type	Description
-key	string	キー
-flag	string	表示状態
-Inherited From:
-ItemMgr#changeDisplayStateByKey
-Source:
-MakeUpItemClass.js, line 165
-initColorCssId()
-カラーCSS IDを初期化する
-Source:
-MakeUpItemClass.js, line 215
-
-
-
-
-
-
 
 
 
@@ -1176,73 +759,233 @@ MakeUpFactoryClass.js, line 19
 
 
 
-Class: BaseMgr
-BaseMgr()
-ベースの管理クラス
+
+
+
+Class: GrpItemMgrFactory
+GrpItemMgrFactory()
+グループアイテムマネージャーファクトリー
 Constructor
-new BaseMgr()
+new GrpItemMgrFactory()
 Source:
-MakeUpItemClass.js, line 11
+MakeUpFactoryClass.js, line 99
+Extends
+ItemMgrFactory
 Methods
-(static) addWindowEvent(func)
-ウィンドウイベントを追加する
+checkPathAndCssid(cssId, path)
+パスとCSSIDをチェックする
 Parameters:
 Name	Type	Description
-func	function	イベントハンドラ
+cssId	string	CSSID
+path	string	パス
+Inherited From:
+ItemMgrFactory#checkPathAndCssid
 Source:
-MakeUpItemClass.js, line 126
-(static) changeDisplay(cssId, flag)
-要素の表示状態を変更する
+MakeUpFactoryClass.js, line 56
+createItem(arg_imagePath) → {GrpItem}
+アイテムを作成する
 Parameters:
 Name	Type	Description
-cssId	string	要素のID
-flag	string	表示状態
+arg_imagePath	string	パス
+Overrides:
+ItemMgrFactory#createItem
 Source:
-MakeUpItemClass.js, line 91
-(static) changeDisplayImage(cssId, src)
-要素の画像を変更する
+MakeUpFactoryClass.js, line 130
+Returns:
+アイテム
+Type
+GrpItem
+createItems(paths) → {Array.<GrpItem>}
+アイテムを作成する
 Parameters:
 Name	Type	Description
-cssId	string	要素のID
-src	string	画像のパス
+paths	Array.<string>	パス
+Overrides:
+ItemMgrFactory#createItems
 Source:
-MakeUpItemClass.js, line 103
-(static) changeDisplayText(cssId, text)
-要素のテキストを変更する
+MakeUpFactoryClass.js, line 115
+Returns:
+アイテム
+Type
+Array.<GrpItem>
+createMgr(paths) → {GrpMgr}
+マネージャーを作成する
 Parameters:
 Name	Type	Description
-cssId	string	要素のID
-text	string	テキスト
+paths	Array.<string>	パス
+Overrides:
+ItemMgrFactory#createMgr
 Source:
-MakeUpItemClass.js, line 114
-(static) display_score(func, score, result_map)
-スコアを表示する
+MakeUpFactoryClass.js, line 106
+Returns:
+マネージャー
+Type
+GrpMgr
+setMakeupManager(makeupManager)
+メイクアップマネージャーを設定する
 Parameters:
 Name	Type	Description
-func	function	イベントハンドラ
-score	number	スコア
-result_map	object	結果マップ
+makeupManager	MakeupManager	メイクアップマネージャー
+Inherited From:
+ItemMgrFactory#setMakeupManager
 Source:
-MakeUpItemClass.js, line 42
-(static) end_display_score()
-スコアの表示を終了する
-Source:
-MakeUpItemClass.js, line 65
-(static) end_preview()
-プレビューを終了する
-Source:
-MakeUpItemClass.js, line 30
-(static) init()
-初期化する
-Source:
-MakeUpItemClass.js, line 77
-(static) preview(func)
-プレビューを表示する
+MakeUpFactoryClass.js, line 19
+
+
+
+
+
+
+
+
+
+
+
+
+## Item
+
+
+
+Class: Item
+Item(cssId)
+アイテム
+Constructor
+new Item(cssId)
+コンストラクタ
 Parameters:
 Name	Type	Description
-func	function	イベントハンドラ
+cssId	string	CSS ID
 Source:
-MakeUpItemClass.js, line 18
+MakeUpItemClass.js, line 299
+Methods
+getCssId() → {string}
+CSS IDを取得する
+Source:
+MakeUpItemClass.js, line 322
+Returns:
+CSS ID
+Type
+string
+getDisplayStatus() → {string}
+表示ステータスを取得する
+Source:
+MakeUpItemClass.js, line 354
+Returns:
+表示ステータス
+Type
+string
+getSrc() → {string}
+ソースを取得する
+Source:
+MakeUpItemClass.js, line 331
+Returns:
+ソース
+Type
+string
+setDisplay(flag)
+表示を設定する
+Parameters:
+Name	Type	Description
+flag	string	フラグ
+Source:
+MakeUpItemClass.js, line 344
+setDisplayImage()
+表示画像を設定する
+Source:
+MakeUpItemClass.js, line 361
+setImgVal(val)
+画像値を設定する
+Parameters:
+Name	Type	Description
+val	object	画像値
+Source:
+MakeUpItemClass.js, line 314
+
+
+
+
+
+Class: MainItem
+MainItem()
+メインアイテムクラス
+Constructor
+new MainItem()
+Source:
+MakeUpItemClass.js, line 453
+Extends
+Item
+Methods
+getCssId() → {string}
+CSS IDを取得する
+Inherited From:
+Item#getCssId
+Source:
+MakeUpItemClass.js, line 322
+Returns:
+CSS ID
+Type
+string
+getDisplayStatus() → {string}
+表示ステータスを取得する
+Inherited From:
+Item#getDisplayStatus
+Source:
+MakeUpItemClass.js, line 354
+Returns:
+表示ステータス
+Type
+string
+getGrp() → {string}
+グループを取得する
+Source:
+MakeUpItemClass.js, line 471
+Returns:
+グループ
+Type
+string
+getSeason() → {string}
+シーズンを取得する
+Source:
+MakeUpItemClass.js, line 479
+Returns:
+シーズン
+Type
+string
+getSrc() → {string}
+ソースを取得する
+Inherited From:
+Item#getSrc
+Source:
+MakeUpItemClass.js, line 331
+Returns:
+ソース
+Type
+string
+setDisplay(flag)
+表示を設定する
+Parameters:
+Name	Type	Description
+flag	string	フラグ
+Inherited From:
+Item#setDisplay
+Source:
+MakeUpItemClass.js, line 344
+setDisplayImage()
+表示画像を設定する
+Inherited From:
+Item#setDisplayImage
+Source:
+MakeUpItemClass.js, line 361
+setImgVal(val)
+画像値を設定する
+Parameters:
+Name	Type	Description
+val	object	画像値
+Inherited From:
+Item#setImgVal
+Source:
+MakeUpItemClass.js, line 314
+
 
 
 
@@ -1324,6 +1067,289 @@ Inherited From:
 Item#setImgVal
 Source:
 MakeUpItemClass.js, line 314
+
+
+
+
+
+
+
+
+
+
+
+
+
+Class: GrpItem
+GrpItem()
+グループアイテムクラス
+Constructor
+new GrpItem()
+Source:
+MakeUpItemClass.js, line 374
+Extends
+Item
+Methods
+getCssId() → {string}
+CSS IDを取得する
+Inherited From:
+Item#getCssId
+Source:
+MakeUpItemClass.js, line 322
+Returns:
+CSS ID
+Type
+string
+getDisplayStatus() → {string}
+表示ステータスを取得する
+Inherited From:
+Item#getDisplayStatus
+Source:
+MakeUpItemClass.js, line 354
+Returns:
+表示ステータス
+Type
+string
+getSrc() → {string}
+ソースを取得する
+Inherited From:
+Item#getSrc
+Source:
+MakeUpItemClass.js, line 331
+Returns:
+ソース
+Type
+string
+setAction(makeupManager)
+アクションを設定する
+Parameters:
+Name	Type	Description
+makeupManager	MakeupManager	メイクアップマネージャー
+Source:
+MakeUpItemClass.js, line 392
+setDisplay(flag)
+表示を設定する
+Parameters:
+Name	Type	Description
+flag	string	フラグ
+Inherited From:
+Item#setDisplay
+Source:
+MakeUpItemClass.js, line 344
+setDisplayImage()
+表示画像を設定する
+Inherited From:
+Item#setDisplayImage
+Source:
+MakeUpItemClass.js, line 361
+setImgVal(val)
+画像値を設定する
+Parameters:
+Name	Type	Description
+val	object	画像値
+Inherited From:
+Item#setImgVal
+Source:
+MakeUpItemClass.js, line 314
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Img
+
+
+
+Class: ImgVal
+ImgVal(src)
+値オブジェクト
+Constructor
+new ImgVal(src)
+コンストラクタ
+Parameters:
+Name	Type	Description
+src	string	ソース
+Source:
+MakeUpItemClass.js, line 487
+Members
+src :string
+ソース
+Type:
+string
+Source:
+MakeUpItemClass.js, line 493
+
+
+
+
+
+
+
+Class: ImgValMain
+ImgValMain(src, grp, color)
+メイン値オブジェクト
+Constructor
+new ImgValMain(src, grp, color)
+コンストラクタ
+Parameters:
+Name	Type	Description
+src	string	ソース
+grp	string	グループ
+color	string	カラー
+Source:
+MakeUpItemClass.js, line 556
+Extends
+ImgValGrp
+Members
+color :string
+カラー
+Type:
+string
+Source:
+MakeUpItemClass.js, line 562
+grp :string
+グループ
+Type:
+string
+Overrides:
+ImgValGrp#grp
+Source:
+MakeUpItemClass.js, line 514
+src :string
+ソース
+Type:
+string
+Overrides:
+ImgValGrp#src
+Source:
+MakeUpItemClass.js, line 493
+
+
+
+
+Class: ImgValColor
+ImgValColor(src, grp, color)
+カラー値オブジェクト ItemMgrFactory
+Constructor
+new ImgValColor(src, grp, color)
+コンストラクタ
+Parameters:
+Name	Type	Description
+src	string	ソース
+grp	string	グループ
+color	string	カラー
+Source:
+MakeUpItemClass.js, line 532
+Extends
+ImgValGrp
+Members
+color :string
+カラー
+Type:
+string
+Source:
+MakeUpItemClass.js, line 538
+grp :string
+グループ
+Type:
+string
+Overrides:
+ImgValGrp#grp
+Source:
+MakeUpItemClass.js, line 514
+src :string
+ソース
+Type:
+string
+Overrides:
+ImgValGrp#src
+Source:
+MakeUpItemClass.js, line 493
+
+
+
+
+Class: ImgValGrp
+ImgValGrp(src, grp)
+グループ値オブジェクト
+Constructor
+new ImgValGrp(src, grp)
+コンストラクタ
+Parameters:
+Name	Type	Description
+src	string	ソース
+grp	string	グループ
+Source:
+MakeUpItemClass.js, line 508
+Extends
+ImgVal
+Members
+grp :string
+グループ
+Type:
+string
+Source:
+MakeUpItemClass.js, line 514
+src :string
+ソース
+Type:
+string
+Overrides:
+ImgVal#src
+Source:
+MakeUpItemClass.js, line 493
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
