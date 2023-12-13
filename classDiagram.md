@@ -122,7 +122,7 @@ class ColorItemMgrFactory  {
 ```
 
 
-
+# Manager
 ```mermaid
 classDiagram
 
@@ -137,11 +137,11 @@ class ItemMgr {
 + changeDisplayStateByKey(key, flag)
 }
 
-class GrpMgr extends ItemMgr {
+class GrpMgr  {
 + new GrpMgr()
 }
 
-class MainMgr extends ItemMgr {
+class MainMgr  {
 + new MainMgr()
 + changeDisplayImage(arg_grp, arg_color)
 + clear_dqn_ct()
