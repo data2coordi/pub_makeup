@@ -42,7 +42,6 @@ ImgValGrp <|-- ImgVal
 
 ```mermaid
 classDiagram
-classDiagram
 class Item {
 + Item(cssId)
 + getCssId()
