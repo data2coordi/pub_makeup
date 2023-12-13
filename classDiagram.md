@@ -1,36 +1,55 @@
-# Image
+
+# Manager
 ```mermaid
 classDiagram
-class ImgVal {
-+ src : string
-+ new ImgVal(src)
+
+
+class MakeUpManager {
+- grpMgr : GroupManager
+- colorMgr : ColorManager
+- mainMgr : MainManager
 }
 
-class ImgValMain {
-+ color : string
-+ grp : string
-+ src : string
-+ new ImgValMain(src, grp, color)
+class BaseMgr {
++ addWindowEvent(func)
++ changeDisplay(cssId, flag)
++ changeDisplayImage(cssId, src)
++ changeDisplayText(cssId, text)
++ display_score(func, score, result_map)
++ end_display_score()
++ end_preview()
++ init()
++ preview(func)
 }
 
-ImgValMain <|-- ImgValGrp
 
-class ImgValColor {
-+ color : string
-+ grp : string
-+ src : string
-+ new ImgValColor(src, grp, color)
+ItemMgr <|-- GrpMgr
+ItemMgr <|-- MainMgr
+ItemMgr <|-- ColorMgr
+
+
+class ItemMgr {
++ new ItemMgr(arg_items, arg_valRep)
++ changeDisplayState(flag)
++ changeDisplayStateByKey(key, flag)
 }
 
-ImgValColor <|-- ImgValGrp
-
-class ImgValGrp {
-+ grp : string
-+ src : string
-+ new ImgValGrp(src, grp)
+class GrpMgr  {
++ new GrpMgr()
 }
 
-ImgValGrp <|-- ImgVal
+class MainMgr  {
++ new MainMgr()
++ changeDisplayImage(arg_grp, arg_color)
++ clear_dqn_ct()
++ get_dqn_ct()
+}
+
+class ColorMgr  {
++ new ColorMgr()
++ changeDisplayImage(key, makeupManager)
++ initColorCssId()
+}
 ```
 
 
@@ -74,6 +93,47 @@ func :function
 
 Item <|-- ColorItem
 ```
+
+
+
+# Image
+```mermaid
+classDiagram
+class ImgVal {
++ src : string
++ new ImgVal(src)
+}
+
+class ImgValMain {
++ color : string
++ grp : string
++ src : string
++ new ImgValMain(src, grp, color)
+}
+
+ImgValMain <|-- ImgValGrp
+
+class ImgValColor {
++ color : string
++ grp : string
++ src : string
++ new ImgValColor(src, grp, color)
+}
+
+ImgValColor <|-- ImgValGrp
+
+class ImgValGrp {
++ grp : string
++ src : string
++ new ImgValGrp(src, grp)
+}
+
+ImgValGrp <|-- ImgVal
+```
+
+
+
+
 
 
 # Factory
@@ -122,38 +182,6 @@ class ColorItemMgrFactory  {
 ```
 
 
-# Manager
-```mermaid
-classDiagram
-
-ItemMgr <|-- GrpMgr
-ItemMgr <|-- MainMgr
-ItemMgr <|-- ColorMgr
-
-
-class ItemMgr {
-+ new ItemMgr(arg_items, arg_valRep)
-+ changeDisplayState(flag)
-+ changeDisplayStateByKey(key, flag)
-}
-
-class GrpMgr  {
-+ new GrpMgr()
-}
-
-class MainMgr  {
-+ new MainMgr()
-+ changeDisplayImage(arg_grp, arg_color)
-+ clear_dqn_ct()
-+ get_dqn_ct()
-}
-
-class ColorMgr  {
-+ new ColorMgr()
-+ changeDisplayImage(key, makeupManager)
-+ initColorCssId()
-}
-```
 
 
 
@@ -193,22 +221,5 @@ class MakeUpClass {
 + setItemMgr(grpMgr, colorMgr, mainMgr)
 }
 
-class MakeUpManager {
-- grpMgr : GroupManager
-- colorMgr : ColorManager
-- mainMgr : MainManager
-}
-
-class BaseMgr {
-+ addWindowEvent(func)
-+ changeDisplay(cssId, flag)
-+ changeDisplayImage(cssId, src)
-+ changeDisplayText(cssId, text)
-+ display_score(func, score, result_map)
-+ end_display_score()
-+ end_preview()
-+ init()
-+ preview(func)
-}
 ```
 
