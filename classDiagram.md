@@ -1,9 +1,8 @@
 
-
+:
 
 
 # Manager
-## メイクアップアイテム、アイテムグループ、人物・背景をコントロールする。
 ```mermaid
 classDiagram
 
@@ -65,7 +64,6 @@ class BaseMgr {
 
 
 # Item
-# カラー別のメイクアップアイテム、メイクアップアイテム、アイテム
 ```mermaid
 classDiagram
 class Item {
