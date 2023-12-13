@@ -148,9 +148,67 @@ class MainMgr  {
 + get_dqn_ct()
 }
 
-class ColorMgr extends ItemMgr {
+class ColorMgr  {
 + new ColorMgr()
 + changeDisplayImage(key, makeupManager)
 + initColorCssId()
 }
 ```
+
+
+
+# Else 
+
+```mermaid
+classDiagram
+class Utility {
++ existCheck(existCheckFlag, key, object)
++ trace(s)
+}
+
+class ScoreClass {
+- Items : Array
++ getScore()
++ get_result_detail()
++ _build_result_detail(ret_map)
++ _get_item_str(cssid)
++ _get_judge_str(judge)
++ _get_season_str(season)
++ dqn()
+}
+
+class Repository {
++ getVals(arg_key)
++ setVal(val)
+}
+
+class MakeUpClass {
++ actionColorButton(currentGrp, selectedColor)
++ actionGrpButton(selectedGrp)
++ displayScore()
++ endDisplayScore()
++ endPreview()
++ initMakeup()
++ preview()
++ setItemMgr(grpMgr, colorMgr, mainMgr)
+}
+
+class MakeUpManager {
+- grpMgr : GroupManager
+- colorMgr : ColorManager
+- mainMgr : MainManager
+}
+
+class BaseMgr {
++ addWindowEvent(func)
++ changeDisplay(cssId, flag)
++ changeDisplayImage(cssId, src)
++ changeDisplayText(cssId, text)
++ display_score(func, score, result_map)
++ end_display_score()
++ end_preview()
++ init()
++ preview(func)
+}
+```
+
