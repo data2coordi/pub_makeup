@@ -57,7 +57,7 @@ GCPのVertex AI(code-vision)を使用して設計書を作成してみること�
 ## クラス図
 ***[クラス図](./classDiagram.md)***
 
-本クラス図は下記の方法で作成した。
+上記リンク先のクラス図はVertex AIを活用し下記の手順で作成した。
 - 下記"JSDOC形式のドキュメンテーション"をブラウザで開く。
 - ブラウザで開いたクラス情報をコピー＆ペーストでAIのプロンプトに貼り付け。
 - Mermaid形式で出力するようにAIに依頼。
@@ -65,15 +65,16 @@ GCPのVertex AI(code-vision)を使用して設計書を作成してみること�
 
 このクラス図は若干、マニュアルで修正したがほぼAIが出力した状態そのままである。
 
-下記のような作業イメージ
+Vertex AIへの支持は下記のような作業イメージ
 ![VertexAi作業イメージ](./VertexAi作業イメージ.jpg )
 
 
 ## JSDOC
 ***[JSDOC形式のドキュメンテーション](https://data2coordi.github.io/pub_makeup/out/index.html)***
 
-JavascriptのコードにJSDOCのコメント付与をAIに指示してJSDOCのコメントを作成した。
-その後、jsdocコマンドで上記ドキュメントを生成している。
+上記リンク先のJSDOCのドキュメントもVertex AIを活用して作成した。
+JavascriptのコードにJSDOCコメント付与をAIに指示してJSDOCコメント付きJavascriptコードを作成。
+その後、jsdocコマンドでHTML形式のドキュメントを生成している。
 完全にAIが生成したそのままである。
 
 
