@@ -65,7 +65,7 @@ GCPのVertex AI(code-vision)を使用して設計書を作成してみること�
 
 このクラス図は若干、マニュアルで修正したがほぼAIが出力した状態そのままである。
 
-Vertex AIへの支持は下記のような作業イメージ
+Vertex AIへの指示は下記のような作業イメージ
 ![VertexAi作業イメージ](./VertexAi作業イメージ.jpg )
 
 
