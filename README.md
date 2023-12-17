@@ -8,7 +8,7 @@
 パーソナルカラーに合わせたメイクカラーを練習するアプリを作ることとなった。
 妻が企画、デザイン、イラストを担当し、私がプログラム作成を担当して、本アプリを作成した。
 
-[スパルタ！パーソナルカラー塾](https://color.toshidayurika.com/spartncolorschool/)
+[スパルタ！パーソナルカラー塾](https://color.toshidayurika.com/?page_id=1817)
 
 
 せっかくなので、このアプリをポートフォリオとして公開することにした。
@@ -28,7 +28,7 @@
 下記リンク先を参照
 
 
-[スパルタ！パーソナルカラー塾](https://color.toshidayurika.com/spartncolorschool/)
+[スパルタ！パーソナルカラー塾](https://color.toshidayurika.com/?page_id=1817)
 
 ## アーキテクチャ
 Javascript。
